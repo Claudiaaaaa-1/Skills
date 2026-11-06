@@ -1,0 +1,40 @@
+{
+  "page": {
+    "spu_id": "SPU-10004",
+    "sku_id": "SKU-10004-V2",
+    "category": "家电/净化器",
+    "blocks": {
+      "title": "通过权威检测认证 净化率稳定",
+      "main_image_ocr": null,
+      "attributes": {"型号": "X2", "CADR": "400m3/h"},
+      "detail_text": "检测编号 XX-2022-0088，可在详情页查看报告扫描件。",
+      "rules": [],
+      "certificates": [{"type": "检测报告", "id": "XX-2022-0088", "note": "编号格式正确，已于 2025 年注销"}]
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "text": "通过权威检测认证",
+      "subject": "认证资质",
+      "predicate": "资质具备",
+      "value": null,
+      "type": "可验证事实",
+      "scope": {"sku": "SKU-10004-V2", "batch": null, "time": null, "region": null},
+      "requires_evidence_types": ["检测报告", "认证书"]
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "subject": "认证资质",
+      "source": "检测报告",
+      "content": "检测编号 XX-2022-0088，格式正确，官方库状态未查询",
+      "value": null,
+      "level": "需交叉验证",
+      "verified_against": "仅格式，未查官方库",
+      "status": "expired",
+      "scope": {"sku": "SKU-10004-V2", "batch": null, "valid_until": "2025-12-31", "region": null}
+    }
+  ]
+}

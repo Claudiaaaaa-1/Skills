@@ -1,0 +1,38 @@
+{
+  "page": {
+    "spu_id": "SPU-10002",
+    "sku_id": "SKU-10002-STD",
+    "category": "床品/四件套",
+    "blocks": {
+      "title": "柔软得像云朵 王者级触感 好到停不下来",
+      "main_image_ocr": null,
+      "attributes": {"材质": "全棉", "支数": "40支"},
+      "detail_text": "触感轻柔，睡进去就不想起来。",
+      "rules": [],
+      "certificates": []
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "text": "柔软得像云朵",
+      "subject": "触感",
+      "predicate": "主观感受",
+      "value": null,
+      "type": "主观修辞",
+      "scope": {"sku": null, "batch": null, "time": null, "region": null},
+      "requires_evidence_types": []
+    },
+    {
+      "claim_id": "C02",
+      "text": "王者级触感",
+      "subject": "触感",
+      "predicate": "主观感受",
+      "value": null,
+      "type": "主观修辞",
+      "scope": {"sku": null, "batch": null, "time": null, "region": null},
+      "requires_evidence_types": []
+    }
+  ],
+  "evidence": []
+}

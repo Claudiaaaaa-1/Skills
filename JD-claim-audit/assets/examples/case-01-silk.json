@@ -1,0 +1,50 @@
+{
+  "page": {
+    "spu_id": "SPU-10001",
+    "sku_id": "SKU-10001-220x240",
+    "category": "床品/蚕丝被",
+    "blocks": {
+      "title": "100%真蚕丝被 柔软得像云朵 一整晚都舍不得起来",
+      "main_image_ocr": null,
+      "attributes": {"填充物": "聚酯纤维", "蚕丝含量": "0%"},
+      "detail_text": "精选真蚕丝填充，亲肤透气，适合四季使用。",
+      "rules": [],
+      "certificates": [{"type": "检测报告", "id": "XX-2024-001", "note": "仅校验编号格式"}]
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "text": "100%真蚕丝",
+      "subject": "填充物材质",
+      "predicate": "成分占比",
+      "value": "100%",
+      "type": "可验证事实",
+      "scope": {"sku": "SKU-10001-220x240", "batch": null, "time": null, "region": null},
+      "requires_evidence_types": ["属性表", "检测报告"]
+    },
+    {
+      "claim_id": "C02",
+      "text": "柔软得像云朵",
+      "subject": "触感",
+      "predicate": "主观感受",
+      "value": null,
+      "type": "主观修辞",
+      "scope": {"sku": null, "batch": null, "time": null, "region": null},
+      "requires_evidence_types": []
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "subject": "填充物材质",
+      "source": "属性表",
+      "content": "填充物 = 聚酯纤维；蚕丝含量 = 0%",
+      "value": "0%",
+      "level": "强事实",
+      "verified_against": "平台属性库",
+      "status": "valid",
+      "scope": {"sku": "SKU-10001-220x240", "batch": null, "valid_until": null, "region": null}
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "page": {
+    "spu_id": "",
+    "sku_id": "",
+    "category": "",
+    "blocks_present": []
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "text": "",
+      "subject": "",
+      "predicate": "",
+      "value": null,
+      "type": "可验证事实",
+      "scope": {"sku": null, "batch": null, "time": null, "region": null},
+      "requires_evidence_types": [],
+      "evidence_refs": [],
+      "alignment": {
+        "matched": [],
+        "status": "not_required",
+        "checked_dims": [],
+        "note": ""
+      },
+      "state": "PASS"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "E01",
+      "subject": "",
+      "source": "",
+      "content": "",
+      "value": null,
+      "level": "强事实",
+      "verified_against": "",
+      "status": "valid",
+      "scope": {"sku": null, "batch": null, "valid_until": null, "region": null}
+    }
+  ],
+  "gaps": [
+    {
+      "claim_id": "C01",
+      "gap_type": "无断裂",
+      "fact": "",
+      "explanation": "",
+      "judgement": "",
+      "acceptable": true,
+      "evidence_refs": []
+    }
+  ],
+  "decision": {
+    "state": "PASS",
+    "claim_states": {"C01": "PASS"},
+    "rule_first": true,
+    "confidence": 0.0,
+    "reason": "",
+    "category": "",
+    "hard_redline": false
+  },
+  "boundary": "未核验检测报告在官方库中的真伪；未覆盖主图与 SKU 的图文关系；未核验实物；单模态文本输入。"
+}

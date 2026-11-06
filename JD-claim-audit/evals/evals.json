@@ -1,0 +1,61 @@
+{
+  "skill_name": "sku-claim-audit",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "审核 evals/files/case-01-silk.json 这个蚕丝被商品页。标题写「100%真蚕丝 柔软得像云朵」，属性表写填充物为聚酯纤维、蚕丝含量 0%。按主张—证据一致性给出台账和四态决策。",
+      "expected_output": "输出完整台账；材质主张判为数值冲突并拦截，纯修辞主张放行，页面级仍保留两条主张各自的状态。",
+      "files": ["evals/files/case-01-silk.json"],
+      "expected_state": "BLOCK",
+      "expectations": [
+        "台账包含 page、claims、evidence、gaps、decision、boundary 六个顶层字段",
+        "C01 的断裂类型为数值冲突，状态为 BLOCK",
+        "C02 状态为 PASS，没有被当成绝对化用语误拦",
+        "页面级状态为 BLOCK，且 decision.claim_states 中 C02 仍为 PASS",
+        "boundary 为非空字符串且声明未核验官方库",
+        "输出通过 validate_output.py 契约校验"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "审核 evals/files/case-02-cloud.json。页面只有「柔软得像云朵」「王者级触感」这类修辞，没有可验证主张，判断该放行还是拦截。",
+      "expected_output": "全部主张识别为纯表达，不做证据要求，页面级放行，不产生假阳性。",
+      "files": ["evals/files/case-02-cloud.json"],
+      "expected_state": "PASS",
+      "expectations": [
+        "两条主张的 alignment.status 均为 not_required",
+        "页面级状态为 PASS",
+        "gaps 中无数值冲突、资质缺失等实质性断裂",
+        "输出通过 validate_output.py 契约校验"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "审核 evals/files/case-03-hairloss.json。洗发水标题写「防脱发」，但页面没有提供任何功效资质或检测报告，说明该怎么处理。",
+      "expected_output": "识别为功效主张但证据缺失，不猜测真假，发出补充证据状态。",
+      "files": ["evals/files/case-03-hairloss.json"],
+      "expected_state": "REQUEST_EVIDENCE",
+      "expectations": [
+        "C01 的断裂类型为资质缺失",
+        "C01 状态为 REQUEST_EVIDENCE，而非 PASS 或 BLOCK",
+        "C02 纯表达状态为 PASS",
+        "页面级状态为 REQUEST_EVIDENCE",
+        "输出通过 validate_output.py 契约校验"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "审核 evals/files/case-04-expired-cert.json。「通过权威检测认证」附有检测报告，编号格式正确但资质已注销，且未查询官方库。请给出决策。",
+      "expected_output": "识别为时间或批次失效，不因编号格式正确而放行，转人工复核并保留能力边界声明。",
+      "files": ["evals/files/case-04-expired-cert.json"],
+      "expected_state": "HUMAN_REVIEW",
+      "expectations": [
+        "断裂类型为时间或批次失效",
+        "页面级状态为 HUMAN_REVIEW，不是 PASS",
+        "evidence 中 verified_against 明确记录未查官方库",
+        "boundary 声明未核验官方库真伪与未覆盖图文关系",
+        "输出通过 validate_output.py 契约校验"
+      ]
+    }
+  ]
+}

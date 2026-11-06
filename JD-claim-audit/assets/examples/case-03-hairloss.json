@@ -1,0 +1,38 @@
+{
+  "page": {
+    "spu_id": "SPU-10003",
+    "sku_id": "SKU-10003-500ML",
+    "category": "个护/洗发水",
+    "blocks": {
+      "title": "防脱发洗发水 洗完清爽不油腻",
+      "main_image_ocr": null,
+      "attributes": {"净含量": "500ml", "适用发质": "所有发质"},
+      "detail_text": "坚持使用，发根更强韧。",
+      "rules": [],
+      "certificates": []
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "C01",
+      "text": "防脱发",
+      "subject": "防脱功效",
+      "predicate": "功效具备",
+      "value": null,
+      "type": "可验证事实",
+      "scope": {"sku": "SKU-10003-500ML", "batch": null, "time": null, "region": null},
+      "requires_evidence_types": ["资质", "检测报告"]
+    },
+    {
+      "claim_id": "C02",
+      "text": "洗完清爽不油腻",
+      "subject": "使用感受",
+      "predicate": "主观感受",
+      "value": null,
+      "type": "主观修辞",
+      "scope": {"sku": null, "batch": null, "time": null, "region": null},
+      "requires_evidence_types": []
+    }
+  ],
+  "evidence": []
+}
